@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# srvyexploR
+# srvyrexploR <img src="man/figures/logo/srvyrExplore.png" align="right" height="149" width="149"/>
 
 The **srvyexploR** package provides datasets used in the book “Exploring
 Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr}

@@ -4,6 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# srvyrexploR <img src="man/figures/logo/srvyrExplore.png" align="right" height="149" width="149"/>
 
 ```{r, include = FALSE}
 #| label: setup
@@ -21,8 +22,6 @@ knitr::opts_chunk$set(
 )
 library(tidyverse)
 ```
-
-# srvyexploR
 
 The **srvyexploR** package provides datasets used in the book "Exploring Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr} and {survey}". This will help readers follow along with the examples and work through the exercises.
 
