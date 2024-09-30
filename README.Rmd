@@ -31,7 +31,7 @@ To install the development version from [GitHub](https://github.com/), use:
 
 ```r
 # install.packages("remotes")
-remotes::install_github("tidy-survey-r/srvyrexploR")
+pak::pak("tidy-survey-r/srvyrexploR")
 ```
 
 To load the package, use:
@@ -96,7 +96,7 @@ To analyze the survey data, we recommend using the {srvyr} package as follows:
 ```r
 # install.packages("remotes")
 
-remotes::install_github("gergness/srvyr")
+pak::pak("gergness/srvyr")
 ```
 
 ```{r}

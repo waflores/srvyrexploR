@@ -6,3 +6,5 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^logo\.png$
+^README\.Rmd$
