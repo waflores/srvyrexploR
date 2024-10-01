@@ -23,6 +23,9 @@ library(tidyverse)
 ```
 
 # srvyexploR
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/tidy-survey-r/srvyrexploR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidy-survey-r/srvyrexploR/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 The **srvyexploR** package provides datasets used in the book "Exploring Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr} and {survey}". This will help readers follow along with the examples and work through the exercises.
 
