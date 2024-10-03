@@ -15,7 +15,7 @@ To install the development version from [GitHub](https://github.com/),
 use:
 
 ``` r
-# install.packages("remotes")
+# install.packages("pak")
 pak::pak("tidy-survey-r/srvyrexploR")
 ```
 
@@ -73,7 +73,7 @@ post-election interviews. To load this dataset, we recommend using the
 {haven} package as follows:
 
 ``` r
-anes_stata <- haven::read_dta(system.file("extdata", "anes_2020_stata_example.dta", package = "srvyrexploR"))
+anes_stata <- haven::read_dta(system.file("extdata", "anes_2020_stata_example.dta", package="srvyrexploR"))
 ```
 
 ### NCVS
@@ -201,8 +201,7 @@ To analyze the survey data, we recommend using the {srvyr} package as
 follows:
 
 ``` r
-# install.packages("remotes")
-
+# install.packages("pak")
 pak::pak("gergness/srvyr")
 ```
 
@@ -210,11 +209,9 @@ pak::pak("gergness/srvyr")
 library(srvyr)
 
 recs_des <- recs_2020 %>%
-  as_survey_rep(
-    weights = NWEIGHT, repweights = NWEIGHT1:NWEIGHT60,
-    type = "JK1", scale = 59 / 60, mse = TRUE,
-    variables = c(ACUsed, Region)
-  )
+  as_survey_rep(weights = NWEIGHT, repweights = NWEIGHT1:NWEIGHT60,
+                type = "JK1", scale = 59/60, mse = TRUE, 
+                variables=c(ACUsed, Region))
 
 recs_des
 #> Call: Called via srvyr
@@ -238,7 +235,7 @@ recs_des
 recs_des %>%
   group_by(Region) %>%
   summarize(
-    p = survey_mean(ACUsed, vartype = "ci", proportion = TRUE, prop_method = "logit")
+    p=survey_mean(ACUsed, vartype="ci", proportion = TRUE, prop_method = "logit")
   )
 #> # A tibble: 4 × 4
 #>   Region        p p_low p_upp
@@ -276,7 +273,7 @@ ANES:
 
 - American National Election Studies. 2021. ANES 2020 Time Series Study
   Full Release \[dataset and documentation\]. July 19, 2021 version.
-  www.electionstudies.org
+  <https://www.electionstudies.org>
 
 NCVS:
 
