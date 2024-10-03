@@ -30,7 +30,7 @@ The **srvyexploR** package provides datasets used in the book [Exploring Complex
 To install the development version from [GitHub](https://github.com/), use:
 
 ```r
-# install.packages("remotes")
+# install.packages("pak")
 pak::pak("tidy-survey-r/srvyrexploR")
 ```
 
@@ -94,8 +94,7 @@ head(recs_2020_raw)
 To analyze the survey data, we recommend using the {srvyr} package as follows:
 
 ```r
-# install.packages("remotes")
-
+# install.packages("pak")
 pak::pak("gergness/srvyr")
 ```
 
