@@ -137,7 +137,7 @@ Anyone interested in redistributing the ANES data should refer to the [ANES FAQ 
 
 ANES: 
 
-+ American National Election Studies. 2021. ANES 2020 Time Series Study Full Release [dataset and documentation]. July 19, 2021 version. www.electionstudies.org
++ American National Election Studies. 2021. ANES 2020 Time Series Study Full Release [dataset and documentation]. July 19, 2021 version. https://www.electionstudies.org
 
 NCVS:
 
