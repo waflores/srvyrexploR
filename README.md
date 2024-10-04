@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# srvyrexploR <img src="man/figures/logo/srvyrExplore.png" align="right" height="149" width="149"/>
+# srvyrexploR <img src="man/figures/srvyrExplore.png" align="right" height="149" width="149"/>
 
 The **srvyexploR** package provides datasets used in the book [Exploring
 Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr}
@@ -73,7 +73,7 @@ post-election interviews. To load this dataset, we recommend using the
 {haven} package as follows:
 
 ``` r
-anes_stata <- haven::read_dta(system.file("extdata", "anes_2020_stata_example.dta", package="srvyrexploR"))
+anes_stata <- haven::read_dta(system.file("extdata", "anes_2020_stata_example.dta", package = "srvyrexploR"))
 ```
 
 ### NCVS
@@ -209,9 +209,11 @@ pak::pak("gergness/srvyr")
 library(srvyr)
 
 recs_des <- recs_2020 %>%
-  as_survey_rep(weights = NWEIGHT, repweights = NWEIGHT1:NWEIGHT60,
-                type = "JK1", scale = 59/60, mse = TRUE, 
-                variables=c(ACUsed, Region))
+  as_survey_rep(
+    weights = NWEIGHT, repweights = NWEIGHT1:NWEIGHT60,
+    type = "JK1", scale = 59 / 60, mse = TRUE,
+    variables = c(ACUsed, Region)
+  )
 
 recs_des
 #> Call: Called via srvyr
@@ -235,7 +237,7 @@ recs_des
 recs_des %>%
   group_by(Region) %>%
   summarize(
-    p=survey_mean(ACUsed, vartype="ci", proportion = TRUE, prop_method = "logit")
+    p = survey_mean(ACUsed, vartype = "ci", proportion = TRUE, prop_method = "logit")
   )
 #> # A tibble: 4 × 4
 #>   Region        p p_low p_upp

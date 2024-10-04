@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# srvyrexploR <img src="man/figures/logo/srvyrExplore.png" align="right" height="149" width="149"/>
+# srvyrexploR <img src="man/figures/srvyrExplore.png" align="right" height="149" width="149"/>
 
 ```{r, include = FALSE}
 #| label: setup
