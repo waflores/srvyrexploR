@@ -121,7 +121,7 @@ The above example estimates the proportion of residential households that use ai
 
 ## License
 
-Data are available by [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. Additionally, re-distributing the ANES or NCVS datasets is subject to their policies.
+Data are available by [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. Additionally, re-distributing the ANES or NCVS datasets is subject to their policies.
 
 
 ## Additional data use information

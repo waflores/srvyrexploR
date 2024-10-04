@@ -253,8 +253,8 @@ that use air-conditioning by region with a 95% confidence interval.
 
 ## License
 
-Data are available by [CC BY-SA
-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
+Data are available by [CC BY
+4.0](https://creativecommons.org/licenses/by/4.0/) license.
 Additionally, re-distributing the ANES or NCVS datasets is subject to
 their policies.
 
