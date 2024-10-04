@@ -1,7 +1,12 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# srvyrexploR <img src="man/figures/srvyrExplore.png" align="right" height="149" width="149"/>
+# srvyexploR
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/tidy-survey-r/srvyrexploR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidy-survey-r/srvyrexploR/actions/workflows/R-CMD-check.yaml)
+
+<!-- badges: end -->
 
 The **srvyexploR** package provides datasets used in the book [Exploring
 Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr}
@@ -14,14 +19,14 @@ exercises.
 To install the development version from [GitHub](https://github.com/),
 use:
 
-``` r
+```r
 # install.packages("pak")
 pak::pak("tidy-survey-r/srvyrexploR")
 ```
 
 To load the package, use:
 
-``` r
+```r
 library(srvyrexploR)
 ```
 
@@ -45,7 +50,7 @@ and methodology reports, and download the data (after registering). We
 received permission to distribute this data for the purpose of the book.
 Once the package is loaded, you can use the data immediately as follows:
 
-``` r
+```r
 head(anes_2020)
 #> # A tibble: 6 × 65
 #>   V200001 CaseID V200002 InterviewMode V200010b Weight V200010c VarUnit V200010d
@@ -72,7 +77,7 @@ subset of the columns and is subset to people who completed both pre and
 post-election interviews. To load this dataset, we recommend using the
 {haven} package as follows:
 
-``` r
+```r
 anes_stata <- haven::read_dta(system.file("extdata", "anes_2020_stata_example.dta", package = "srvyrexploR"))
 ```
 
@@ -89,37 +94,37 @@ the full data available from 2021 at
 [ICPSR](https://www.icpsr.umich.edu/web/NACJD/studies/38429). This data
 is reproduced here with permission from ICPSR.
 
-``` r
+```r
 head(ncvs_2021_household)
 #> # A tibble: 6 × 12
 #>   YEARQ IDHH    WGTHHCY V2117 V2118 V2015 V2143 SC214A V2122 V2126B V2127B V2129
 #>   <dbl> <chr>     <dbl> <dbl> <dbl> <fct> <fct> <fct>  <fct> <fct>  <fct>  <fct>
-#> 1 2021. 171005…      0    139     1 <NA>  3     12     33    0      2      3    
-#> 2 2021. 171005…   1072.    63     2 2     2     8      32    17     2      1    
-#> 3 2021. 171005…      0    140     1 <NA>  2     5      33    13     2      3    
-#> 4 2021. 171005…      0    139     1 <NA>  3     13     33    0      2      3    
-#> 5 2021. 171005…   1200.   138     1 1     2     11     29    18     2      1    
+#> 1 2021. 171005…      0    139     1 <NA>  3     12     33    0      2      3
+#> 2 2021. 171005…   1072.    63     2 2     2     8      32    17     2      1
+#> 3 2021. 171005…      0    140     1 <NA>  2     5      33    13     2      3
+#> 4 2021. 171005…      0    139     1 <NA>  3     13     33    0      2      3
+#> 5 2021. 171005…   1200.   138     1 1     2     11     29    18     2      1
 #> 6 2021. 171005…   1254.   138     1 1     2     8      24    13     2      2
 head(ncvs_2021_person)
 #> # A tibble: 6 × 11
 #>   YEARQ IDHH           IDPER WGTPERCY V3014 V3015 V3018 V3023A V3024 V3084 V3086
 #>   <dbl> <chr>          <chr>    <dbl> <dbl> <fct> <fct> <fct>  <fct> <fct> <fct>
-#> 1 2021. 1710051365368… 1710…    1216.    84 3     2     1      2     6     2    
-#> 2 2021. 1710053925458… 1710…    1362.    70 5     2     1      2     2     2    
-#> 3 2021. 1710053925458… 1710…       0     43 5     1     1      2     <NA>  <NA> 
-#> 4 2021. 1710053925458… 1710…       0     15 5     1     1      2     <NA>  <NA> 
-#> 5 2021. 1710053965345… 1710…    1422.    89 1     2     1      2     2     2    
+#> 1 2021. 1710051365368… 1710…    1216.    84 3     2     1      2     6     2
+#> 2 2021. 1710053925458… 1710…    1362.    70 5     2     1      2     2     2
+#> 3 2021. 1710053925458… 1710…       0     43 5     1     1      2     <NA>  <NA>
+#> 4 2021. 1710053925458… 1710…       0     15 5     1     1      2     <NA>  <NA>
+#> 5 2021. 1710053965345… 1710…    1422.    89 1     2     1      2     2     2
 #> 6 2021. 1710053965345… 1710…       0     90 1     1     1      2     <NA>  <NA>
 head(ncvs_2021_incident)
 #> # A tibble: 6 × 60
 #>   YEARQ IDHH     IDPER V4012 WGTVICCY V4016 V4017 V4018 V4019 V4021B V4022 V4024
 #>   <dbl> <chr>    <chr> <dbl>    <dbl> <dbl> <fct> <fct> <fct> <fct>  <fct> <fct>
-#> 1 2021. 1710071… 1710…     1    1780.     1 1     <NA>  <NA>  9      3     6    
-#> 2 2021. 1710071… 1710…     1    1990.     2 1     <NA>  <NA>  8      3     7    
-#> 3 2021. 1710071… 1710…     2    1990.     2 1     <NA>  <NA>  8      3     7    
-#> 4 2021. 1710073… 1710…     1    4653.     1 1     <NA>  <NA>  1      3     5    
-#> 5 2021. 1710074… 1710…     1    2302.     1 1     <NA>  <NA>  2      3     21   
-#> 6 2021. 1710074… 1710…     1    2308.     1 1     <NA>  <NA>  8      3     5    
+#> 1 2021. 1710071… 1710…     1    1780.     1 1     <NA>  <NA>  9      3     6
+#> 2 2021. 1710071… 1710…     1    1990.     2 1     <NA>  <NA>  8      3     7
+#> 3 2021. 1710071… 1710…     2    1990.     2 1     <NA>  <NA>  8      3     7
+#> 4 2021. 1710073… 1710…     1    4653.     1 1     <NA>  <NA>  1      3     5
+#> 5 2021. 1710074… 1710…     1    2302.     1 1     <NA>  <NA>  2      3     21
+#> 6 2021. 1710074… 1710…     1    2308.     1 1     <NA>  <NA>  8      3     5
 #> # ℹ 48 more variables: V4049 <fct>, V4050 <fct>, V4051 <fct>, V4052 <fct>,
 #> #   V4053 <fct>, V4054 <fct>, V4055 <fct>, V4056 <fct>, V4057 <fct>,
 #> #   V4058 <fct>, V4234 <fct>, V4235 <fct>, V4241 <fct>, V4242 <fct>,
@@ -141,11 +146,11 @@ been conducted since 1979 by the Energy Information Administration. More
 information about the original data is available at the [RECS
 website](https://www.eia.gov/consumption/residential/data/2020/).
 
-``` r
+```r
 head(recs_2015)
 #> # A tibble: 6 × 141
 #>   DOEID REGIONC Region    Division MSAStatus Urbanicity HousingUnitType YearMade
-#>   <dbl>   <dbl> <fct>     <fct>    <fct>     <fct>      <fct>           <ord>   
+#>   <dbl>   <dbl> <fct>     <fct>    <fct>     <fct>      <fct>           <ord>
 #> 1 10001       4 West      Pacific  Metropol… Urban Area Single-family … 2000-20…
 #> 2 10002       3 South     West So… None      Rural      Single-family … 1980-19…
 #> 3 10003       3 South     East So… Metropol… Urban Area Single-family … 1970-19…
@@ -162,13 +167,13 @@ head(recs_2015)
 head(recs_2020)
 #> # A tibble: 6 × 100
 #>    DOEID ClimateRegion_BA Urbanicity Region    REGIONC   Division     STATE_FIPS
-#>    <dbl> <fct>            <fct>      <fct>     <chr>     <fct>        <chr>     
-#> 1 100001 Mixed-Dry        Urban Area West      WEST      Mountain So… 35        
-#> 2 100002 Mixed-Humid      Urban Area South     SOUTH     West South … 05        
-#> 3 100003 Mixed-Dry        Urban Area West      WEST      Mountain So… 35        
-#> 4 100004 Mixed-Humid      Urban Area South     SOUTH     South Atlan… 45        
-#> 5 100005 Mixed-Humid      Urban Area Northeast NORTHEAST Middle Atla… 34        
-#> 6 100006 Hot-Humid        Urban Area South     SOUTH     West South … 48        
+#>    <dbl> <fct>            <fct>      <fct>     <chr>     <fct>        <chr>
+#> 1 100001 Mixed-Dry        Urban Area West      WEST      Mountain So… 35
+#> 2 100002 Mixed-Humid      Urban Area South     SOUTH     West South … 05
+#> 3 100003 Mixed-Dry        Urban Area West      WEST      Mountain So… 35
+#> 4 100004 Mixed-Humid      Urban Area South     SOUTH     South Atlan… 45
+#> 5 100005 Mixed-Humid      Urban Area Northeast NORTHEAST Middle Atla… 34
+#> 6 100006 Hot-Humid        Urban Area South     SOUTH     West South … 48
 #> # ℹ 93 more variables: state_postal <fct>, state_name <fct>, HDD65 <dbl>,
 #> #   CDD65 <dbl>, HDD30YR <dbl>, CDD30YR <dbl>, HousingUnitType <fct>,
 #> #   YearMade <ord>, TOTSQFT_EN <dbl>, TOTHSQFT <dbl>, TOTCSQFT <dbl>,
@@ -179,13 +184,13 @@ head(recs_2020)
 head(recs_2020_raw)
 #> # A tibble: 6 × 789
 #>    DOEID REGIONC   DIVISION        STATE_FIPS state_postal state_name BA_climate
-#>    <dbl> <chr>     <chr>           <chr>      <chr>        <chr>      <chr>     
-#> 1 100001 WEST      Mountain South  35         NM           New Mexico Mixed-Dry 
+#>    <dbl> <chr>     <chr>           <chr>      <chr>        <chr>      <chr>
+#> 1 100001 WEST      Mountain South  35         NM           New Mexico Mixed-Dry
 #> 2 100002 SOUTH     West South Cen… 05         AR           Arkansas   Mixed-Hum…
-#> 3 100003 WEST      Mountain South  35         NM           New Mexico Mixed-Dry 
+#> 3 100003 WEST      Mountain South  35         NM           New Mexico Mixed-Dry
 #> 4 100004 SOUTH     South Atlantic  45         SC           South Car… Mixed-Hum…
 #> 5 100005 NORTHEAST Middle Atlantic 34         NJ           New Jersey Mixed-Hum…
-#> 6 100006 SOUTH     West South Cen… 48         TX           Texas      Hot-Humid 
+#> 6 100006 SOUTH     West South Cen… 48         TX           Texas      Hot-Humid
 #> # ℹ 782 more variables: IECC_climate_code <chr>, UATYP10 <chr>, HDD65 <dbl>,
 #> #   CDD65 <dbl>, HDD30YR_PUB <dbl>, CDD30YR_PUB <dbl>, TYPEHUQ <dbl>,
 #> #   CELLAR <dbl>, CRAWL <dbl>, CONCRETE <dbl>, BASEOTH <dbl>, BASEFIN <dbl>,
@@ -200,12 +205,12 @@ head(recs_2020_raw)
 To analyze the survey data, we recommend using the {srvyr} package as
 follows:
 
-``` r
+```r
 # install.packages("pak")
 pak::pak("gergness/srvyr")
 ```
 
-``` r
+```r
 library(srvyr)
 
 recs_des <- recs_2020 %>%
@@ -229,9 +234,9 @@ recs_des
 #>     NWEIGHT42 + NWEIGHT43 + NWEIGHT44 + NWEIGHT45 + NWEIGHT46 + NWEIGHT47 +
 #>     NWEIGHT48 + NWEIGHT49 + NWEIGHT50 + NWEIGHT51 + NWEIGHT52 + NWEIGHT53 +
 #>     NWEIGHT54 + NWEIGHT55 + NWEIGHT56 + NWEIGHT57 + NWEIGHT58 + NWEIGHT59 +
-#>     NWEIGHT60` 
-#>   - weights: NWEIGHT 
-#> Data variables: 
+#>     NWEIGHT60`
+#>   - weights: NWEIGHT
+#> Data variables:
 #>   - ACUsed (lgl), Region (fct)
 
 recs_des %>%
@@ -273,24 +278,24 @@ Anyone interested in redistributing the ANES data should refer to the
 
 ANES:
 
-- American National Election Studies. 2021. ANES 2020 Time Series Study
-  Full Release \[dataset and documentation\]. July 19, 2021 version.
-  <https://www.electionstudies.org>
+-   American National Election Studies. 2021. ANES 2020 Time Series Study
+    Full Release \[dataset and documentation\]. July 19, 2021 version.
+    <https://www.electionstudies.org>
 
 NCVS:
 
-- United States. Bureau of Justice Statistics. National Crime
-  Victimization Survey, \[United States\], 2021. Inter-university
-  Consortium for Political and Social Research \[distributor\],
-  2022-09-19. <https://doi.org/10.3886/ICPSR38429.v1>
+-   United States. Bureau of Justice Statistics. National Crime
+    Victimization Survey, \[United States\], 2021. Inter-university
+    Consortium for Political and Social Research \[distributor\],
+    2022-09-19. <https://doi.org/10.3886/ICPSR38429.v1>
 
 RECS:
 
-- U.S. Energy Information Administration. 2024. Residential Energy
-  Consumption 2020 Survey Data. \[dataset and documentation\]. January
-  2024 version.
-  <https://www.eia.gov/consumption/residential/data/2020/index.php?view=microdata>
-- U.S. Energy Information Administration. 2018 Residential Energy
-  Consumption 2015 Survey Data. \[dataset and documentation\]. December
-  2018 version.
-  <https://www.eia.gov/consumption/residential/data/2015/index.php?view=microdata>
+-   U.S. Energy Information Administration. 2024. Residential Energy
+    Consumption 2020 Survey Data. \[dataset and documentation\]. January
+    2024 version.
+    <https://www.eia.gov/consumption/residential/data/2020/index.php?view=microdata>
+-   U.S. Energy Information Administration. 2018 Residential Energy
+    Consumption 2015 Survey Data. \[dataset and documentation\]. December
+    2018 version.
+    <https://www.eia.gov/consumption/residential/data/2015/index.php?view=microdata>
